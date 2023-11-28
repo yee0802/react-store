@@ -50,40 +50,102 @@
 .home__products {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, 350px);
-  grid-auto-rows: 490px;
+  grid-template-columns: repeat(auto-fill, 310px);
+  grid-auto-rows: 415px;
   justify-content: center;
   gap: 8px;
   list-style: none;
   height: calc(100vh - 117px);
   overflow-y: scroll;
+  scrollbar-width: none;
 }
 
-.product-card {
+/* Product */
+
+.product--card {
+  position: relative;
   display: grid;
-  justify-items: center;
-  align-items: center;
+  grid-template-rows: repeat(2, 1fr);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product--card > img {
+  width: 100%;
+}
+
+.product--card__bottom {
+  display: grid;
+  padding-top: 0.5rem;
+  border-left: 2px solid #989898;
+  border-right: 2px solid #989898;
+  border-bottom: 2px solid #989898;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.product--info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   text-align: center;
-  gap: 5px;
-  padding: 0.5rem;
-  border: 2px solid #000;
-  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
 }
 
-.product-card > img {
-  border-radius: 8px;
+.product--title {
+  font-size: 1.25rem;
 }
 
-.atc-button {
+.product--price {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.product--btns {
+  display: grid;
+  align-items: center;
+  padding: 0.25rem 0.3rem;
+  grid-template-columns: 30px 1fr;
+  gap: 10px;
+}
+
+.fav,
+.atc {
+  cursor: pointer;
   border: none;
-  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.atc {
+  height: 90%;
+  border-radius: 7px;
+  font-size: 1.1rem;
+}
+
+.atc:hover {
+  background-color: rgb(167, 166, 166);
+  transition: background-color 200ms ease-in-out;
+}
+
+.fav {
+  display: grid;
+  place-items: center;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
   font-weight: bold;
   padding: 0.4rem;
-  background-color: lightgreen;
-  cursor: pointer;
 }
 
-.atc-button:hover {
-  transform: scale(1.1, 1.1);
-  transition: transform 150ms ease-in-out;
+.fav > svg {
+  height: 17px;
+  width: 17px;
+}
+
+.fav > svg:hover {
+  fill: red;
+  transform: scale(1.4, 1.4);
+  transition: all 150ms ease-in;
 }

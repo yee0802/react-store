@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../api/posts";
+import ProductListItem from "./components/productListItem";
 
 export default function Home() {
   const [products, setProducts] = useState("");
@@ -7,7 +8,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await api.get("/products?offset=0&limit=15");
+        const res = await api.get("/products?offset=0&limit=20");
         setProducts(res.data);
       } catch (err) {
         if (err.response) {
@@ -27,17 +28,7 @@ export default function Home() {
       <main className="home container">
         <ul className="home__products">
           {products.map((product, idx) => (
-            <li className="product-card" key={idx}>
-              <h3>{product.title}</h3>
-              <img src={product.images[0]} alt="product image" width={300} />
-              <p>
-                {product.description.length > 80
-                  ? `${product.description.slice(0, 70)}...`
-                  : product.description}
-              </p>
-              <p>{`£${product.price}`}</p>
-              <button className="atc-button">ADD TO CART</button>
-            </li>
+            <ProductListItem product={product} key={idx} />
           ))}
         </ul>
       </main>
