@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../../App.jsx";
 import cartLogo from "../../../assets/cart.svg";
+
 export default function CartSideBar() {
-  const [cart, setCart] = useState("");
+  const { cart } = useContext(CartContext);
 
   document.onclick = (e) => {
     if (e.target.id !== "cart-sidebar" && e.target.id !== "cart") {
@@ -32,9 +34,9 @@ export default function CartSideBar() {
         <ul className="cart-sidebar__list">
           {cart ? (
             cart.map((item, idx) => (
-              <li key={idx}>
-                <h3>{item.title}</h3>
-                <p>{item.price}</p>
+              <li className="cart-sidebar__list--item" key={idx}>
+                <p>{item.title}</p>
+                <p className="product--price">{`£${item.price}`}</p>
               </li>
             ))
           ) : (

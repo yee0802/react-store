@@ -70,11 +70,20 @@
 
 .cart-sidebar__list {
   display: grid;
+  grid-template: repeat(auto-fill, 70px) / 1fr;
   list-style: none;
   padding: 0.5rem;
   height: 100%;
   border-top: 2px solid lightgray;
   border-bottom: 2px solid lightgray;
+}
+
+.cart-sidebar__list--item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 80px;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
 }
 
 .cart-sidebar__checkout {
@@ -110,7 +119,7 @@
   grid-template-columns: repeat(auto-fill, 310px);
   grid-auto-rows: 415px;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   list-style: none;
   height: calc(100vh - 117px);
   overflow-y: scroll;
@@ -125,6 +134,7 @@
   grid-template-rows: 225px 170px;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 5px 2.5px 2.5px #00000030;
 }
 
 .product--card > img {
