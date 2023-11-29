@@ -8,7 +8,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await api.get("/products?offset=0&limit=20");
+        const res = await api.get("/products");
         setProducts(res.data);
       } catch (err) {
         if (err.response) {

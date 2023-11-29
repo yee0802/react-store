@@ -1,4 +1,4 @@
-import cartLogo from "../assets/cart.svg";
+import CartSideBar from "./components/CartSidebar";
 
 export default function Header() {
   return (
@@ -7,7 +7,7 @@ export default function Header() {
 
       <section className="header__links">
         <p>CATEGORIES</p>
-        <img src={cartLogo} alt="cart-logo" />
+        <CartSideBar />
       </section>
     </header>
   );

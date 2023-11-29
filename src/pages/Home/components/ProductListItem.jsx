@@ -2,6 +2,7 @@ export default function ProductListItem({ product }) {
   return (
     <li className="product--card">
       <img src={product.images[0]} alt="product image" />
+
       <section className="product--card__bottom">
         <section className="product--info">
           <p className="product--title">{product.title}</p>
