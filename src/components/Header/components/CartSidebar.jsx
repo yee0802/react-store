@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../App.jsx";
 import cartLogo from "../../../assets/cart.svg";
 
 export default function CartSideBar() {
+  const [total, setTotal] = useState(0.0);
   const { cart } = useContext(CartContext);
 
   document.onclick = (e) => {
@@ -14,6 +15,16 @@ export default function CartSideBar() {
       sidebar.classList.remove("active");
     }
   };
+
+  const totalPrice = () => {
+    if (cart) {
+      let num = 0;
+      cart.forEach((item) => (num += item.price));
+      setTotal(num);
+    }
+  };
+
+  useEffect(totalPrice, [cart]);
 
   return (
     <>
@@ -46,7 +57,7 @@ export default function CartSideBar() {
           )}
         </ul>
         <section className="cart-sidebar__checkout">
-          <p>{`£0.00`}</p>
+          <p className="product--price">{`£${total}`}</p>
           <button className="checkout-btn">CHECKOUT</button>
         </section>
       </section>
