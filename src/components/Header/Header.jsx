@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../../App";
+import { Link } from "react-router-dom";
 import cartLogo from "../../assets/cart.svg";
+import HeartLogo from "../../assets/heart";
 import CartSidebar from "../CartSidebar/CartSidebar";
 
 export default function Header() {
@@ -11,6 +13,12 @@ export default function Header() {
       <h1>REACT STORE</h1>
 
       <section className="header__links">
+        <section className="fav-link-container">
+          <Link className="fav-link" to="/favourite-items">
+            <HeartLogo />
+          </Link>
+        </section>
+
         <section
           id="cart"
           onClick={() => {

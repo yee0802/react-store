@@ -29,6 +29,23 @@
 .header__links {
   display: flex;
   align-items: center;
+  gap: 15px;
+}
+
+.fav-link-container {
+  display: grid;
+  place-content: center;
+}
+
+.fav-link > svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 2px;
+}
+
+.fav-link > svg:hover {
+  fill: red;
+  transition: fill 200ms ease-in-out;
 }
 
 /* Home */
