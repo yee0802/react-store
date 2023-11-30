@@ -1,37 +1,20 @@
-import { useEffect, useState } from "react";
-import api from "../../api/posts";
-import ProductListItem from "./components/productListItem";
+import { Link } from "react-router-dom";
 
 export default function Home() {
-  const [products, setProducts] = useState("");
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await api.get("/products");
-        setProducts(res.data);
-      } catch (err) {
-        if (err.response) {
-          console.log(err.response.data);
-          console.log(err.response.status);
-          console.log(err.response.headers);
-        } else {
-          console.log(`Error: ${err.message}`);
-        }
-      }
-    };
-    fetchProducts();
-  }, []);
-
-  if (products) {
-    return (
-      <main className="home container">
-        <ul className="home__products">
-          {products.map((product, idx) => (
-            <ProductListItem product={product} key={idx} />
-          ))}
-        </ul>
-      </main>
-    );
-  }
+  return (
+    <main className="home container">
+      <article className="home__welcome">
+        <h2>Welcome</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis hic
+          doloribus voluptatibus repellat, error esse libero maiores commodi! Ex
+          est odio, rem harum aperiam illum magnam necessitatibus saepe a
+          consectetur.
+        </p>
+        <button>
+          <Link to="/products"> View All Products</Link>
+        </button>
+      </article>
+    </main>
+  );
 }

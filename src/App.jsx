@@ -1,8 +1,9 @@
 import { createContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Home from "./pages/Home/index";
+import Home from "./pages/Home/";
 import "./App.css";
+import Products from "./pages/Products";
 
 const CartContext = createContext();
 
@@ -17,6 +18,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
           </Routes>
         </CartContext.Provider>
       </div>
