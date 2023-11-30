@@ -1,12 +1,3 @@
-#cart {
-  position: relative;
-  cursor: pointer;
-}
-
-#cart-btn {
-  width: 32px;
-}
-
 #cart-sidebar {
   display: grid;
   grid-template: 50px 1fr 60px / 1fr;

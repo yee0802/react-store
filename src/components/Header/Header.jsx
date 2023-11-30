@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import cartLogo from "../../assets/cart.svg";
 import HeartLogo from "../../assets/heart";
 import CartSidebar from "../CartSidebar/CartSidebar";
+import "./index.css";
 
 export default function Header() {
   const { cart } = useContext(CartContext);
 
   return (
     <header className="app-header">
-      <h1>REACT STORE</h1>
+      <Link to="/" className="header__h1">
+        <h1>REACT STORE</h1>
+      </Link>
 
       <section className="header__links">
         <section className="fav-link-container">
