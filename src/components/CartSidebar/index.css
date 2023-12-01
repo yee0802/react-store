@@ -25,11 +25,22 @@
   font-size: 1.3rem;
 }
 
-.cart-sidebar-header > img {
+.cart-sidebar-close-btn {
+  display: grid;
+  place-items: center;
   position: absolute;
-  width: 22px;
+  width: 24px;
+  height: 24px;
   left: 10px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
+}
+
+.cart-sidebar-close-btn:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 250ms ease-in-out;
 }
 
 .cartlogo-total-items {
@@ -50,13 +61,19 @@
 
 .cart-sidebar__list {
   display: grid;
-  grid-template: repeat(auto-fill, 70px) / 1fr;
-  gap: 4px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 70px;
+  gap: 8px;
   list-style: none;
   padding: 0.5rem;
   height: 100%;
   border-top: 2px solid lightgray;
   border-bottom: 2px solid lightgray;
+  overflow-y: scroll;
+}
+
+.cart-sidebar__list::-webkit-scrollbar {
+  display: none;
 }
 
 .cart-sidebar__list--item {
