@@ -35,7 +35,11 @@ export default function ProductPage() {
     return (
       <main className="product-page container">
         <section className="product-page__info">
-          <button className="go-back" onClick={() => navigate(-1)}>
+          <button
+            className="go-back"
+            onClick={() => navigate(-1)}
+            title="Go Back"
+          >
             <img src={chevronLeft} alt="chevron-left" />
           </button>
           <img src={product.images[0]} alt="" />
