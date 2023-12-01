@@ -2,7 +2,7 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, 310px);
-  grid-auto-rows: 400px;
+  grid-auto-rows: 460px;
   justify-content: center;
   gap: 10px;
   list-style: none;
@@ -23,14 +23,14 @@
 .product--card {
   position: relative;
   display: grid;
-  grid-template-rows: 230px 170px;
+  grid-template-rows: 290px 170px;
   border-radius: 8px;
   box-shadow: 5px 2.5px 2.5px #00000030;
   overflow: hidden;
 }
 
 .product--card > img {
-  min-height: 230px;
+  min-height: 290px;
   width: 100%;
 }
 
