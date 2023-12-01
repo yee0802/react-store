@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../../App";
 import HeartLogo from "../../../assets/heart";
+import { Link } from "react-router-dom";
 
 export default function ProductListItem({ product }) {
   const { cart, setCart } = useContext(CartContext);
@@ -21,7 +22,9 @@ export default function ProductListItem({ product }) {
 
       <section className="product--card__bottom">
         <section className="product--info">
-          <p className="product--title">{product.title}</p>
+          <Link to={`/products/${product.id}`} className="product--card__link">
+            <p className="product--title">{product.title}</p>
+          </Link>
           <p className="product--price">{`£${product.price}`}</p>
         </section>
 
