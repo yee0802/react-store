@@ -12,6 +12,7 @@
 }
 
 .product-page__info {
+  position: relative;
   display: grid;
   grid-template: 1fr 25px 20px 100px 60px / 1fr;
   justify-items: center;
@@ -66,4 +67,25 @@
   .product-page__checkout > button {
     width: 250px;
   }
+}
+
+.go-back {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 15px;
+  left: 15px;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  background-color: lightgray;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.go-back:hover {
+  transform: scale(1.2, 1.2);
+  transition: transform 175ms ease-in-out;
 }

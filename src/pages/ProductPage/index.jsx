@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import chevronLeft from "../../assets/chevron-left.svg";
 import api from "../../api/posts";
 import "./index.css";
 import AddToCartBtn from "../../components/AddToCartBtn";
@@ -9,6 +10,8 @@ export default function ProductPage() {
 
   const param = useParams();
   const { id } = param;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -32,6 +35,9 @@ export default function ProductPage() {
     return (
       <main className="product-page container">
         <section className="product-page__info">
+          <button className="go-back" onClick={() => navigate(-1)}>
+            <img src={chevronLeft} alt="chevron-left" />
+          </button>
           <img src={product.images[0]} alt="" />
           <h1>{product.title}</h1>
           <h4>{product.category.name}</h4>
