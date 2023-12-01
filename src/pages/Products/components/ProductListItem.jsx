@@ -1,21 +1,8 @@
-import { useContext } from "react";
-import { CartContext } from "../../../App";
 import HeartLogo from "../../../assets/heart";
 import { Link } from "react-router-dom";
+import AddToCartBtn from "../../../components/AddToCartBtn";
 
 export default function ProductListItem({ product }) {
-  const { cart, setCart } = useContext(CartContext);
-
-  const addToCart = (item) => {
-    const duplicate = cart
-      ? cart.some((obj) => {
-          return obj.id == item.id;
-        })
-      : false;
-
-    duplicate ? setCart([...cart]) : setCart([...cart, item]);
-  };
-
   return (
     <li className="product--card">
       <img src={product.images[0]} alt="product image" />
@@ -32,9 +19,7 @@ export default function ProductListItem({ product }) {
           <button className="fav">
             <HeartLogo />
           </button>
-          <button className="atc" onClick={() => addToCart(product)}>
-            Add To Cart
-          </button>
+          <AddToCartBtn product={product} />
         </section>
       </section>
     </li>
