@@ -8,6 +8,8 @@ export default function CartSidebarBasket({ cart }) {
       let num = 0;
       cart.forEach((item) => (num += item.price));
       setTotal(num);
+    } else {
+      setTotal(0.0);
     }
   };
 

@@ -1,6 +1,6 @@
 #cart-sidebar {
   display: grid;
-  grid-template: 50px 1fr 60px / 1fr;
+  grid-template: 50px 30px 1fr 60px / 1fr;
   position: fixed;
   text-align: center;
   align-items: center;
@@ -12,6 +12,21 @@
   border-left: 2px solid lightgray;
   z-index: 999;
   transition: 500ms;
+}
+
+.cart-sidebar__clear-all {
+  margin: 0 1.5rem;
+  background-color: lightgray;
+  border: none;
+  height: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-sidebar__clear-all:hover {
+  transform: scale(1.1, 1.1);
+  background-color: rgb(153, 152, 152);
+  transition: all 250ms ease-in-out;
 }
 
 #cart-sidebar.active {
