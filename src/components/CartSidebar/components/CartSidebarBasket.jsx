@@ -6,7 +6,7 @@ export default function CartSidebarBasket({ cart }) {
   const totalPrice = () => {
     if (cart) {
       let num = 0;
-      cart.forEach((item) => (num += item.price));
+      cart.forEach((item) => (num += item.quantity * item.price));
       setTotal(num);
     } else {
       setTotal(0.0);
