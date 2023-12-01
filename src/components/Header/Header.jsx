@@ -3,7 +3,6 @@ import { CartContext } from "../../App";
 import { Link } from "react-router-dom";
 import cartLogo from "../../assets/cart.svg";
 import HeartLogo from "../../assets/heart";
-import CartSidebar from "../CartSidebar/CartSidebar";
 import "./index.css";
 
 export default function Header() {
@@ -36,8 +35,6 @@ export default function Header() {
           <figure className="cartlogo-total-items">{cart.length}</figure>
         </section>
       </section>
-
-      <CartSidebar cart={cart} />
     </header>
   );
 }
