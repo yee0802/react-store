@@ -51,6 +51,7 @@
 .cart-sidebar__list {
   display: grid;
   grid-template: repeat(auto-fill, 70px) / 1fr;
+  gap: 4px;
   list-style: none;
   padding: 0.5rem;
   height: 100%;
@@ -59,11 +60,32 @@
 }
 
 .cart-sidebar__list--item {
+  position: relative;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 80px;
   width: 100%;
-  border-bottom: 1px solid lightgray;
+  background-color: #f8f8f8;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+}
+
+.cart-sidebar__delete-btn {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cart-sidebar__delete-btn:hover {
+  background-color: rgb(255, 24, 24);
+  font-weight: bold;
+  transform: scale(1.15, 1.15);
+  transition: 250ms ease-in-out;
 }
 
 .cart-sidebar__basket {

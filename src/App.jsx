@@ -17,7 +17,7 @@ function App() {
       <div className="app-container">
         <CartContext.Provider value={{ cart, setCart }}>
           <Header />
-          <CartSidebar cart={cart} />
+          <CartSidebar />
 
           <Routes>
             <Route path="/" element={<Home />} />
