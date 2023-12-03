@@ -1,26 +1,31 @@
 import { Link } from "react-router-dom";
 import "./index.css";
 import Reviews from "./components/Reviews/Reviews";
+import heroBg from "../../assets/hero-bg.mp4";
 
 export default function Home() {
   return (
-    <main className="container">
+    <main>
       <section id="home">
-        <article className="home__welcome">
-          <h2>Welcome To The Store</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <Link to="/products">
-            <button className="view-all-products">View All Products</button>
-          </Link>
-        </article>
+        <section className="home-hero">
+          <video
+            className="home-hero__video"
+            src={heroBg}
+            autoPlay
+            loop
+            muted
+          ></video>
+          <article className="home__welcome">
+            <h2>Ready To Level Up Your Style?</h2>
+            <Link to="/products">
+              <button className="view-all-products">
+                Shop Products &#x2192;
+              </button>
+            </Link>
+          </article>
+        </section>
+
+        <section className="home__trending"></section>
 
         <Reviews />
       </section>
