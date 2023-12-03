@@ -1,10 +1,9 @@
+import x from "../../../assets/x-icon.svg";
+import plusIcon from "../../../assets/plus-icon.svg";
+import minusIcon from "../../../assets/minus-icon.svg";
+
 export default function CartSidebarList(props) {
   const { cart, setCart } = props;
-
-  const clearCart = () => {
-    cart.forEach((item) => (item.quantity = 0));
-    setCart("");
-  };
 
   const removeCartItem = (item) => {
     const updatedCart = cart.filter((cartItem) => cartItem.id !== item.id);
@@ -14,11 +13,8 @@ export default function CartSidebarList(props) {
 
   return (
     <>
-      <button className="cart-sidebar__clear-all" onClick={() => clearCart()}>
-        Clear All
-      </button>
       <ul className="cart-sidebar__list">
-        {cart ? (
+        {cart.length > 0 ? (
           cart.map((item, idx) => (
             <li className="cart-sidebar__list--item" key={idx}>
               <button
@@ -26,16 +22,54 @@ export default function CartSidebarList(props) {
                 title="Remove Item"
                 onClick={() => removeCartItem(item)}
               >
-                X
+                <img src={x} alt="close-icon" />
               </button>
-              <p>{item.title}</p>
-              <p className="product--price">{`£${item.price}`}</p>
-              <p>{item.quantity ? item.quantity : "0"}</p>
+
+              <img
+                className="cart-sidebar__image"
+                src={item.images[0]}
+                alt="product-image"
+              />
+              <p className="cart-sidebar__list--item__title">{item.title}</p>
+              <section className="cart-sidebar__prices-quantity">
+                <section className="cart-item__quantity">
+                  <button
+                    onClick={() => {
+                      item.quantity--;
+
+                      if (item.quantity === 0) {
+                        const idx = cart.indexOf(item);
+                        if (idx > -1) cart.splice(idx, 1);
+                      }
+
+                      setCart([...cart]);
+                    }}
+                  >
+                    <img src={minusIcon} alt="minus-button" />
+                  </button>
+
+                  <p>{item.quantity ? item.quantity : "0"}</p>
+                  <button
+                    onClick={() => {
+                      item.quantity++;
+
+                      setCart([...cart]);
+                    }}
+                  >
+                    <img src={plusIcon} alt="plus-button" />
+                  </button>
+                </section>
+
+                <p className="product--individual-price">{`£${item.price}`}</p>
+                <p className="product--price">
+                  {`£${item.quantity * item.price}`}
+                </p>
+              </section>
             </li>
           ))
         ) : (
           <li>
-            <p>Empty Cart</p>
+            <p>Your shopping cart is empty</p>
           </li>
         )}
       </ul>

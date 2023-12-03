@@ -16,8 +16,7 @@ export default function CartSidebarHeader({ cart }) {
         <img src={chevronRight} alt="chevron-right" />
       </button>
 
-      <h1>CART</h1>
-      <figure className="cart-total-items">{cart.length}</figure>
+      <h1>SHOPPING BAG {`(${cart.length})`}</h1>
     </header>
   );
 }

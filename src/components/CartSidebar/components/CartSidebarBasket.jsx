@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import trashCan from "../../../assets/trashcan.svg";
 
-export default function CartSidebarBasket({ cart }) {
+export default function CartSidebarBasket(props) {
   const [total, setTotal] = useState(0.0);
+
+  const { cart, setCart } = props;
 
   const totalPrice = () => {
     if (cart) {
@@ -15,10 +18,21 @@ export default function CartSidebarBasket({ cart }) {
 
   useEffect(totalPrice, [cart]);
 
+  const clearCart = () => {
+    cart.forEach((item) => (item.quantity = 0));
+    setCart("");
+  };
+
   return (
     <section className="cart-sidebar__basket">
-      <p className="product--price">{`£${total}`}</p>
-      <button className="checkout-btn">CHECKOUT</button>
+      <section className="cart-sidebar__total-clear">
+        <p className="product--price">{`TOTAL: £${total}`}</p>
+        <button className="cart-sidebar__clear-all" onClick={() => clearCart()}>
+          <img src={trashCan} alt="trash-can-logo" />
+        </button>
+      </section>
+
+      <button className="checkout-btn">Checkout</button>
     </section>
   );
 }
