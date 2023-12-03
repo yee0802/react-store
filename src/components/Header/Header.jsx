@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="app-header">
       <Link to="/" className="header__h1">
-        <h1>REACT STORE</h1>
+        <h1>Stylish</h1>
       </Link>
 
       <section className="header__links">

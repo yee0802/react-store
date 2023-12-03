@@ -58,17 +58,6 @@
   transition: all 250ms ease-in-out;
 }
 
-.cartlogo-total-items {
-  position: absolute;
-  display: grid;
-  place-content: center;
-  font-weight: bold;
-  top: 0;
-  right: 4px;
-  width: 20px;
-  height: 20px;
-}
-
 .cart-total-items {
   position: absolute;
   right: 15px;
