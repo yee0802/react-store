@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap");
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -9,6 +11,10 @@
 .header__h1 {
   text-decoration: none;
   color: #fff;
+}
+
+.header__h1 > h1 {
+  font-family: "Hedvig Letters Serif", Arial, Helvetica, sans-serif;
 }
 
 .header__links {

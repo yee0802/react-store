@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap");
+
+.home__welcome > h2,
+.home__about > h2,
+.reviews > h2 {
+  font-family: "Hedvig Letters Serif", Arial, Helvetica, sans-serif;
+}
+
 #home {
   display: grid;
   height: calc(100vh - 85px);
