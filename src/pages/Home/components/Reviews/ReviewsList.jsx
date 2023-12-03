@@ -22,11 +22,30 @@ export default function ReviewsList() {
     fetchUsers();
   }, []);
 
+  const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("slidein-animation");
+        return;
+      } else {
+        entry.target.classList.remove("slidein-animation");
+      }
+    });
+  });
+
+  for (let i = 0; i < animatedElements.length; i++) {
+    const el = animatedElements[i];
+
+    observer.observe(el);
+  }
+
   if (users) {
     return (
       <ul className="review-list">
         {users.map((user, idx) => (
-          <li key={idx} className="review-list--item">
+          <li key={idx} className="review-list--item animate-on-scroll">
             <img src={user.avatar} alt="user-profile-pic" />
             <h3>{user.name}</h3>
             <section className="review-list--item__content">
