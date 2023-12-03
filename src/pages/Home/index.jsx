@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import Reviews from "./components/Reviews/Reviews";
 import heroBg from "../../assets/hero-bg.mp4";
+import HomeAbout from "./components/HomeAbout";
 
 export default function Home() {
   return (
@@ -24,9 +25,8 @@ export default function Home() {
             </Link>
           </article>
         </section>
-
+        <HomeAbout />
         <section className="home__trending"></section>
-
         <Reviews />
       </section>
     </main>
