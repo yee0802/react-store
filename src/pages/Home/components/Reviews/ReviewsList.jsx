@@ -28,9 +28,6 @@ export default function ReviewsList() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("slidein-animation");
-        return;
-      } else {
-        entry.target.classList.remove("slidein-animation");
       }
     });
   });
