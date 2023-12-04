@@ -9,10 +9,10 @@ export default function CartSidebar() {
   const { cart, setCart } = useContext(CartContext);
 
   return (
-    <section id="cart-sidebar">
+    <aside id="cart-sidebar">
       <CartSidebarHeader cart={cart} />
       <CartSidebarList cart={cart} setCart={setCart} />
       <CartSidebarBasket cart={cart} setCart={setCart} />
-    </section>
+    </aside>
   );
 }
