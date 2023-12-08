@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap");
 
-.home__welcome > h2,
-.home__about > h2,
-.reviews > h2 {
+h2 {
   font-family: "Hedvig Letters Serif", Arial, Helvetica, sans-serif;
 }
 
@@ -89,26 +87,45 @@
   transition: transform 250ms ease-in-out;
 }
 
+/* Trending */
+
+.trending-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 310px);
+  grid-auto-rows: 460px;
+  gap: 30px;
+  justify-content: center;
+}
+
 /* About */
 
-.home__about {
+.home__about,
+.reviews,
+.home__trending {
   display: grid;
   justify-items: center;
   width: 100vw;
 }
 
+.home__about > h2 {
+  background-color: #000;
+  color: #fff;
+}
+
+.home__trending--items,
 .home__about--info,
 .review-list {
   display: grid;
   margin: 1rem;
   padding: 1rem;
   border: 5px solid #000;
-  border-radius: 15px;
   width: calc(100% - 32px);
   max-width: 1700px;
 }
 
 .home__about--info {
+  background-color: #000;
+  color: #fff;
   place-items: center;
   height: 500px;
 }
@@ -121,12 +138,7 @@
 
 /* Reviews */
 
-.reviews {
-  display: grid;
-  justify-items: center;
-  width: 100vw;
-}
-
+.home__trending > h2,
 .reviews > h2,
 .home__about > h2 {
   width: 100%;
