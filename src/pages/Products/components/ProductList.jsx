@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../../../api/posts";
 import ProductListItem from "../components/ProductListItem";
+import ProductFilter from "./ProductFilter";
 
 export default function ProductList() {
+  const [defaultProducts, setDefaultProducts] = useState("");
   const [products, setProducts] = useState("");
 
   useEffect(() => {
@@ -10,6 +12,7 @@ export default function ProductList() {
       try {
         const res = await api.get("/products");
         setProducts(res.data);
+        setDefaultProducts(res.data);
       } catch (err) {
         if (err.response) {
           console.log(err.response.data);
@@ -25,11 +28,18 @@ export default function ProductList() {
 
   if (products) {
     return (
-      <ul className="products-list">
-        {products.map((product, idx) => (
-          <ProductListItem product={product} key={idx} />
-        ))}
-      </ul>
+      <>
+        <ProductFilter
+          products={products}
+          setProducts={setProducts}
+          defaultProducts={defaultProducts}
+        />
+        <ul className="products-list">
+          {products.map((product, idx) => (
+            <ProductListItem product={product} key={idx} />
+          ))}
+        </ul>
+      </>
     );
   }
 }

@@ -1,3 +1,21 @@
+.products {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+
+.filter--container {
+  display: grid;
+  align-items: center;
+  justify-content: end;
+  padding: 0 1.75rem;
+}
+
+#sort-by {
+  border-radius: 5px;
+  background-color: #faf9f6;
+  font-size: 1.2rem;
+}
+
 .products-list {
   display: grid;
   width: 100%;
@@ -6,7 +24,7 @@
   justify-content: center;
   gap: 10px;
   list-style: none;
-  height: calc(100vh - 117px);
+  height: calc(100vh - 187px);
   overflow-y: scroll;
   scrollbar-width: none;
 }
