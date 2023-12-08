@@ -16,7 +16,7 @@ export default function Header() {
 
       <section className="header__links">
         <section className="fav-link-container">
-          <Link className="fav-link" to="/favourite-items">
+          <Link className="fav-link" to="/saved-items">
             <HeartLogo />
           </Link>
         </section>
