@@ -1,7 +1,7 @@
 import AddToCartBtn from "../../../components/AddToCartBtn";
-import HeartLogo from "../../../assets/heart";
 import truckIcon from "../../../assets/truck.svg";
 import boxIcon from "../../../assets/box.svg";
+import AddToSavedBtn from "../../../components/AddToSavedBtn";
 
 export default function ProductPageInfo({ product }) {
   return (
@@ -12,10 +12,7 @@ export default function ProductPageInfo({ product }) {
       <p className="product--price">{`£${product.price}`}</p>
 
       <section className="product-page__checkout">
-        <button className="fav">
-          <HeartLogo />
-        </button>
-
+        <AddToSavedBtn item={product} />
         <AddToCartBtn product={product} />
       </section>
 

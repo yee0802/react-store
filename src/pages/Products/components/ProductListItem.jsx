@@ -1,6 +1,6 @@
-import HeartLogo from "../../../assets/heart";
 import { Link } from "react-router-dom";
 import AddToCartBtn from "../../../components/AddToCartBtn";
+import AddToSavedBtn from "../../../components/AddToSavedBtn";
 
 export default function ProductListItem({ product }) {
   return (
@@ -16,9 +16,7 @@ export default function ProductListItem({ product }) {
         </section>
 
         <section className="product--btns">
-          <button className="fav">
-            <HeartLogo />
-          </button>
+          <AddToSavedBtn item={product} />
           <AddToCartBtn product={product} />
         </section>
       </section>
