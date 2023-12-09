@@ -27,7 +27,7 @@ export default function ProductFilter(props) {
   };
 
   return (
-    <aside className="filter--container" onChange={() => filter()}>
+    <section className="filter--container" onChange={() => filter()}>
       <select name="filter" id="sort-by">
         <option value="default" hidden defaultValue>
           Sort By
@@ -36,6 +36,6 @@ export default function ProductFilter(props) {
         <option value="high-low">Price: High-Low</option>
         <option value="low-high">Price: Low-High</option>
       </select>
-    </aside>
+    </section>
   );
 }
