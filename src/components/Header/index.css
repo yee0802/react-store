@@ -47,7 +47,8 @@
   height: 18px;
 }
 
-.fav-link-container {
+.fav-link-container,
+.products-link-container {
   display: grid;
   place-content: center;
 }
@@ -55,11 +56,16 @@
 .fav-link > svg {
   width: 28px;
   height: 28px;
-  margin-bottom: 2px;
   fill: lightgray;
 }
 
 .fav-link > svg:hover {
   fill: red;
   transition: fill 200ms ease-in-out;
+}
+
+.products-link > img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 2px;
 }
