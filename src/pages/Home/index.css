@@ -20,8 +20,7 @@ h2 {
   position: relative;
   display: grid;
   justify-content: center;
-  align-items: end;
-  padding-bottom: 5rem;
+  align-items: center;
   background-color: #000;
   height: calc(100vh - 85px);
   overflow: hidden;
@@ -31,7 +30,7 @@ h2 {
   position: absolute;
   top: -200px;
   left: -200px;
-  opacity: 0.65;
+  opacity: 0.3;
 }
 
 .home-hero::before {
@@ -45,7 +44,7 @@ h2 {
 
 .home__welcome {
   display: grid;
-  grid-template-rows: 100px 120px;
+  grid-template-rows: 2fr 1fr;
   text-align: center;
   justify-items: center;
   align-items: end;
@@ -59,10 +58,6 @@ h2 {
   font-size: 4.5rem;
 }
 
-.home__welcome > a {
-  width: fit-content;
-}
-
 .home__stats {
   display: flex;
   color: #fff;
@@ -72,7 +67,7 @@ h2 {
 
 .view-all-products {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #141414;
+  background-color: #1b1b1b;
   height: 60px;
   width: 400px;
   font-size: 1.2rem;
