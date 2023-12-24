@@ -1,5 +1,5 @@
 import CartSidebarList from "./components/CartSidebarList.jsx";
-import CartSidebarBasket from "./components/CartSidebarBasket.jsx";
+import CartSidebarBasket from "./components/CartSidebarBasket/CartSidebarBasket.jsx";
 import CartSidebarHeader from "./components/CartSidebarHeader.jsx";
 import "./index.css";
 import { useContext } from "react";
