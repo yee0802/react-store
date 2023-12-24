@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import ProductPage from "./pages/ProductPage";
 import CartSidebar from "./components/CartSidebar/CartSidebar";
 import SavedItems from "./pages/SavedItems";
+import Cart from "./pages/Cart";
 import { CartContext, SavedContext } from "./Contexts";
 import "./App.css";
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<ProductPage />} />
               <Route path="/saved-items" element={<SavedItems />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </SavedContext.Provider>
         </CartContext.Provider>
