@@ -76,6 +76,10 @@
   border-bottom: 1px solid lightgray;
 }
 
+.cart-item-desc {
+  display: none;
+}
+
 .cart-sidebar__image {
   grid-area: 1 / 1 / 3 / 2;
   width: 120px;

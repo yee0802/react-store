@@ -30,7 +30,10 @@ export default function CartSidebarList(props) {
                 src={item.images[0]}
                 alt="product-image"
               />
-              <p className="cart-sidebar__list--item__title">{item.title}</p>
+              <section className="cart-title-desc">
+                <p className="cart-sidebar__list--item__title">{item.title}</p>
+                <span className="cart-item-desc">{item.description}</span>
+              </section>
               <section className="cart-sidebar__prices-quantity">
                 <section className="cart-item__quantity">
                   <button
