@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import trashCan from "../../../assets/trashcan.svg";
 
 export default function CartSidebarBasket(props) {
@@ -32,6 +33,9 @@ export default function CartSidebarBasket(props) {
         </button>
       </section>
 
+      <Link to="/cart">
+        <button className="view-cart-btn">View Cart</button>
+      </Link>
       <button className="checkout-btn">Checkout</button>
     </section>
   );
