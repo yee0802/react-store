@@ -20,8 +20,7 @@ export default function CartTotal() {
   useEffect(totalPrice, [cart]);
 
   const clearCart = () => {
-    cart.forEach((item) => (item.quantity = 0));
-    setCart("");
+    setCart([]);
   };
 
   return (
