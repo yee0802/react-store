@@ -6,9 +6,16 @@ export default function CartSidebarList(props) {
   const { cart, setCart } = props;
 
   const removeCartItem = (item) => {
-    const updatedCart = cart.filter((cartItem) => cartItem.id !== item.id);
-    item.quantity = 0;
-    cart.length > 1 ? setCart(updatedCart) : setCart("");
+    setCart((currentCart) => {
+      const cartItemIndex = currentCart.findIndex(
+        (cartItem) => cartItem.id === item.id
+      );
+
+      const newCart = currentCart.slice();
+
+      newCart.splice(cartItemIndex, 1);
+      return newCart;
+    });
   };
 
   return (
