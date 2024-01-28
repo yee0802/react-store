@@ -89,7 +89,6 @@ h2 {
   grid-template-columns: repeat(4, 310px);
   gap: 30px;
   justify-content: center;
-  overflow-x: scroll;
 }
 
 /* About */
