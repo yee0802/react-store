@@ -2,22 +2,24 @@ import { useContext } from "react";
 import { CartContext } from "../App";
 
 export default function AddToCartBtn({ product }) {
-  const { cart, setCart } = useContext(CartContext);
+  const { setCart } = useContext(CartContext);
 
   const addToCart = (item) => {
-    if (!item.quantity) {
-      item.quantity = 1;
-    } else {
-      item.quantity++;
-    }
+    setCart((currentCart) => {
+      const duplicateIndex = currentCart.findIndex((obj) => obj.id === item.id);
 
-    const duplicate = cart
-      ? cart.some((obj) => {
-          return obj.id == item.id;
-        })
-      : false;
+      if (duplicateIndex !== -1) {
+        const newCart = currentCart.slice();
 
-    duplicate ? setCart([...cart]) : setCart([...cart, item]);
+        newCart[duplicateIndex] = {
+          ...newCart[duplicateIndex],
+          quantity: newCart[duplicateIndex].quantity + 1,
+        };
+        return newCart;
+      } else {
+        return currentCart.concat({ ...item, quantity: 1 });
+      }
+    });
   };
 
   return (
