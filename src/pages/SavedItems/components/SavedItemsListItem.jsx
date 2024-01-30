@@ -17,7 +17,7 @@ export default function SavedItemsListItem({ item }) {
       setFavourites(updatedCart);
       localStorage.setItem("saved-items", JSON.stringify(favourites));
     } else {
-      setFavourites("");
+      setFavourites([]);
       localStorage.removeItem("saved-items");
     }
   };

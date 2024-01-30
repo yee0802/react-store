@@ -3,18 +3,25 @@ import HeartLogo from "../assets/heart";
 import { SavedContext } from "../Contexts";
 
 export default function AddToSavedBtn({ item }) {
-  const { favourites, setFavourites } = useContext(SavedContext);
+  const { setFavourites } = useContext(SavedContext);
 
   const addToSaved = (item) => {
-    const duplicate = favourites
-      ? favourites.some((obj) => {
-          return obj.id == item.id;
-        })
-      : false;
+    setFavourites((currentFavourites) => {
+      const duplicateIndex = currentFavourites.findIndex(
+        (obj) => obj.id === item.id
+      );
 
-    duplicate
-      ? setFavourites([...favourites])
-      : setFavourites([...favourites, item]);
+      if (duplicateIndex !== -1) {
+        const newFav = currentFavourites.slice();
+
+        newFav[duplicateIndex] = {
+          ...newFav[duplicateIndex],
+        };
+        return newFav;
+      } else {
+        return currentFavourites.concat({ ...item });
+      }
+    });
   };
 
   return (
