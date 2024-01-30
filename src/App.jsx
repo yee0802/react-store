@@ -12,7 +12,7 @@ import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [favourites, setFavourites] = useState("");
+  const [favourites, setFavourites] = useState([]);
 
   return (
     <>
