@@ -1,4 +1,26 @@
+import { useEffect } from "react";
+
 export default function HomeAbout() {
+  useEffect(() => {
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slidein-animation");
+        }
+      });
+    });
+
+    animatedElements.forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section className="home__about">
       <h2>About Us</h2>
