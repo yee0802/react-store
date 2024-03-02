@@ -30,7 +30,7 @@ export default function CartSidebarListItem(props) {
 
       <img
         className="cart-sidebar__image"
-        src={item.images[0]}
+        src={item.imageURL}
         alt="product-image"
       />
       <section className="cart-title-desc">
