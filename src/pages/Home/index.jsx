@@ -1,4 +1,3 @@
-import Reviews from "./components/Reviews/Reviews";
 import HomeAbout from "./components/HomeAbout";
 import HomeHero from "./components/HomeHero";
 import "./index.css";
@@ -11,7 +10,6 @@ export default function Home() {
         <HomeHero />
         <HomeTrending />
         <HomeAbout />
-        <Reviews />
       </section>
     </main>
   );

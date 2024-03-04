@@ -31,7 +31,7 @@ export default function SavedItemsListItem({ item }) {
       >
         <img src={x} alt="close-icon" />
       </button>
-      <img src={item.images[0]} alt="product-image" />
+      <img src={item.imageURL} alt="product-image" />
       <section className="saved-card__info">
         <section className="saved-card__info--title">
           <p>{item.title}</p>

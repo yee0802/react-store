@@ -5,7 +5,7 @@ import AddToSavedBtn from "../../../components/AddToSavedBtn";
 export default function ProductListItem({ product }) {
   return (
     <li className="product--card">
-      <img src={product.images[0]} alt="product image" />
+      <img src={product.imageURL} alt="product image" />
 
       <section className="product--card__bottom">
         <section className="product--info">

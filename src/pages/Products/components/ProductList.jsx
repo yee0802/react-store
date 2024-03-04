@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../../../api/posts";
+import api from "../../../api";
 import ProductListItem from "../components/ProductListItem";
 import ProductFilter from "./ProductFilter";
 
@@ -11,8 +11,8 @@ export default function ProductList() {
     const fetchProducts = async () => {
       try {
         const res = await api.get("/products");
-        setProducts(res.data);
-        setDefaultProducts(res.data);
+        setProducts(res.data.products);
+        setDefaultProducts(res.data.products);
       } catch (err) {
         if (err.response) {
           console.log(err.response.data);
