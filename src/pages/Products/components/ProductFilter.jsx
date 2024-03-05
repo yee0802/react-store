@@ -46,16 +46,23 @@ export default function ProductFilter(props) {
           key={idx}
           className="filter-category--btn"
           onClick={(e) => {
+            const buttons = document.querySelectorAll(".filter-category--btn");
             const button = e.currentTarget;
             const isSelected = button.classList.contains("selected");
 
-            if (!isSelected) {
-              button.classList.add("selected");
-              fetchCategoryById(category.id);
-            } else {
-              button.classList.remove("selected");
-              setProducts(defaultProducts);
-            }
+            buttons.forEach((btn) => {
+              if (btn !== button) {
+                btn.classList.remove("selected");
+              }
+
+              if (!isSelected) {
+                button.classList.add("selected");
+                fetchCategoryById(category.id);
+              } else {
+                button.classList.remove("selected");
+                setProducts(defaultProducts);
+              }
+            });
           }}
         >
           {category.name}
