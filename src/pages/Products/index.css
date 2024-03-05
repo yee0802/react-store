@@ -59,7 +59,7 @@
   overflow: hidden;
 }
 
-.product--card > img {
+.product--card__link > img {
   min-height: 290px;
   width: 100%;
 }
