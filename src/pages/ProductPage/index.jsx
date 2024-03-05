@@ -37,9 +37,10 @@ export default function ProductPage() {
         <button
           className="go-back"
           onClick={() => navigate(-1)}
-          title="Go Back"
+          title="Previous page"
         >
           <img src={chevronLeft} alt="chevron-left" />
+          BACK
         </button>
         <img src={product.imageURL} alt="product-image" />
 
