@@ -30,7 +30,6 @@ export default function ProductList() {
     return (
       <>
         <ProductFilter
-          products={products}
           setProducts={setProducts}
           defaultProducts={defaultProducts}
         />
