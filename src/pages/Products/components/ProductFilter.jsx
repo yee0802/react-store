@@ -47,19 +47,19 @@ export default function ProductFilter(props) {
           className="filter-category--btn"
           onClick={(e) => {
             const buttons = document.querySelectorAll(".filter-category--btn");
-            const button = e.currentTarget;
-            const isSelected = button.classList.contains("selected");
+            const currentButton = e.currentTarget;
+            const isSelected = currentButton.classList.contains("selected");
 
-            buttons.forEach((btn) => {
-              if (btn !== button) {
-                btn.classList.remove("selected");
+            buttons.forEach((eachBtn) => {
+              if (eachBtn !== currentButton) {
+                eachBtn.classList.remove("selected");
               }
 
               if (!isSelected) {
-                button.classList.add("selected");
+                currentButton.classList.add("selected");
                 fetchCategoryById(category.id);
               } else {
-                button.classList.remove("selected");
+                currentButton.classList.remove("selected");
                 setProducts(defaultProducts);
               }
             });
