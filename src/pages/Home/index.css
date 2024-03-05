@@ -94,7 +94,6 @@ h2 {
 /* About */
 
 .home__about,
-.reviews,
 .home__trending {
   display: grid;
   justify-items: center;
@@ -107,8 +106,7 @@ h2 {
 }
 
 .home__trending--items,
-.home__about--info,
-.review-list {
+.home__about--info {
   display: grid;
   margin: 1rem;
   padding: 1rem;
@@ -130,10 +128,7 @@ h2 {
   max-width: 60%;
 }
 
-/* Reviews */
-
 .home__trending > h2,
-.reviews > h2,
 .home__about > h2 {
   width: 100%;
   text-align: center;
@@ -141,84 +136,6 @@ h2 {
   padding: 2rem 0;
   border-top: 5px solid #000;
   border-bottom: 5px solid #000;
-}
-
-.review-list {
-  list-style: none;
-  gap: 25px;
-  width: calc(100% - 32px);
-  max-width: 1700px;
-}
-
-.review-list--item {
-  display: grid;
-  column-gap: 20px;
-  row-gap: 10px;
-  align-items: center;
-  text-align: center;
-}
-
-.review-list--item > img {
-  height: 225px;
-  width: 225px;
-  border-radius: 50%;
-}
-
-.review-list--item__content > p {
-  border: 2px solid #000;
-  border-radius: 12px;
-  background-color: #fff;
-  position: relative;
-  max-width: 700px;
-  padding: 2rem;
-}
-
-.review-list--item:nth-child(1) {
-  grid-template: 1fr 20px / 225px 1fr;
-}
-
-.review-list--item:nth-child(1) > section {
-  grid-area: 1 / 2 / 2 / 3;
-}
-
-.review-list--item:nth-child(1) > section > p:before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 10px);
-  left: -13px;
-  height: 20px;
-  width: 20px;
-  background: inherit;
-  transform: rotate(135deg);
-  border-bottom: inherit;
-  border-right: inherit;
-}
-
-.review-list--item:nth-child(2) {
-  grid-template: 1fr 20px / 1fr 225px;
-}
-
-.review-list--item:nth-child(2) > section {
-  display: grid;
-  justify-content: end;
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.review-list--item:nth-child(2) > section > p:before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 10px);
-  right: -13px;
-  height: 20px;
-  width: 20px;
-  background: inherit;
-  transform: rotate(315deg);
-  border-bottom: inherit;
-  border-right: inherit;
-}
-
-.review-list--item:nth-child(2) > h3 {
-  grid-area: 2 / 2 / 3 / 3;
 }
 
 /* Animation */
