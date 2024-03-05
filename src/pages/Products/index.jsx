@@ -3,7 +3,7 @@ import "./index.css";
 
 export default function Products() {
   return (
-    <main className="products container">
+    <main className="products">
       <ProductList />
     </main>
   );
