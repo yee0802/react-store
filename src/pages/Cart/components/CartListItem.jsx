@@ -2,7 +2,7 @@ import x from "../../../assets/x-icon.svg";
 import plusIcon from "../../../assets/plus-icon.svg";
 import minusIcon from "../../../assets/minus-icon.svg";
 
-export default function CartSidebarListItem(props) {
+export default function CartListItem(props) {
   const { item, cart, setCart } = props;
 
   const removeCartItem = (item) => {

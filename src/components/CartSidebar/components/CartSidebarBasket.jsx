@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CartTotal from "./CartTotal";
+import CartTotal from "../../../pages/Cart/components/CartTotal";
 
 export default function CartSidebarBasket() {
   return (

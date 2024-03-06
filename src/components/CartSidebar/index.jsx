@@ -1,5 +1,5 @@
-import CartSidebarList from "./components/CartSidebarList.jsx";
-import CartSidebarBasket from "./components/CartSidebarBasket/CartSidebarBasket.jsx";
+import CartList from "../../pages/Cart/components/CartList.jsx";
+import CartSidebarBasket from "./components/CartSidebarBasket.jsx";
 import CartSidebarHeader from "./components/CartSidebarHeader.jsx";
 import "./index.css";
 import { useContext } from "react";
@@ -11,7 +11,7 @@ export default function CartSidebar() {
   return (
     <aside id="cart-sidebar">
       <CartSidebarHeader cart={cart} />
-      <CartSidebarList cart={cart} setCart={setCart} />
+      <CartList cart={cart} setCart={setCart} />
       <CartSidebarBasket cart={cart} setCart={setCart} />
     </aside>
   );

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import trashCan from "../../../../assets/trashcan.svg";
-import { CartContext } from "../../../../Contexts";
+import trashCan from "../../../assets/trashcan.svg";
+import { CartContext } from "../../../Contexts";
 
 export default function CartTotal() {
   const [total, setTotal] = useState(0.0);
