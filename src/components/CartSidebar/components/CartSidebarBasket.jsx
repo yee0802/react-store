@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CartTotal from "../../../pages/Cart/components/CartTotal";
+import CheckoutBtn from "../../CheckoutBtn";
 
 export default function CartSidebarBasket() {
   return (
@@ -19,7 +20,7 @@ export default function CartSidebarBasket() {
           View Cart
         </button>
       </Link>
-      <button className="checkout-btn">Checkout</button>
+      <CheckoutBtn />
     </section>
   );
 }
