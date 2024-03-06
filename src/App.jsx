@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import Home from "./pages/Home/";
 import Products from "./pages/Products";
 import ProductPage from "./pages/ProductPage";
-import CartSidebar from "./components/CartSidebar/CartSidebar";
+import CartSidebar from "./components/CartSidebar";
 import SavedItems from "./pages/SavedItems";
 import Cart from "./pages/Cart";
 import { CartContext, SavedContext } from "./Contexts";
