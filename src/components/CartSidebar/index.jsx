@@ -12,7 +12,7 @@ export default function CartSidebar() {
     <aside id="cart-sidebar">
       <CartSidebarHeader cart={cart} />
       <CartList cart={cart} setCart={setCart} />
-      <CartSidebarBasket cart={cart} setCart={setCart} />
+      <CartSidebarBasket cart={cart} />
     </aside>
   );
 }
