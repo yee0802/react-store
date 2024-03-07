@@ -50,19 +50,19 @@ export default function ProductFilter(props) {
             const currentButton = e.currentTarget;
             const isSelected = currentButton.classList.contains("selected");
 
-            buttons.forEach((eachBtn) => {
-              if (eachBtn !== currentButton) {
-                eachBtn.classList.remove("selected");
-              }
+            if (!isSelected) {
+              buttons.forEach((eachBtn) => {
+                if (eachBtn !== currentButton) {
+                  eachBtn.classList.remove("selected");
+                }
+              });
 
-              if (!isSelected) {
-                currentButton.classList.add("selected");
-                fetchCategoryById(category.id);
-              } else {
-                currentButton.classList.remove("selected");
-                setProducts(defaultProducts);
-              }
-            });
+              currentButton.classList.add("selected");
+              fetchCategoryById(category.id);
+            } else {
+              currentButton.classList.remove("selected");
+              setProducts(defaultProducts);
+            }
           }}
         >
           {category.name}
