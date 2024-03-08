@@ -1,0 +1,24 @@
+.page-not-found {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-not-found--header {
+  font-size: 10rem;
+}
+
+.page-not-found--title {
+  font-size: 3rem;
+}
+
+.page-not-found--desc {
+  font-size: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.page-not-found--emoticon {
+  font-size: 4rem;
+}
