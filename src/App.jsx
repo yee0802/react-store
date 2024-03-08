@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { CartContext, SavedContext } from "./Contexts";
 import Header from "./components/Header";
 import Home from "./pages/Home/";
 import Products from "./pages/Products";
@@ -7,7 +8,7 @@ import ProductPage from "./pages/ProductPage";
 import CartSidebar from "./components/CartSidebar";
 import SavedItems from "./pages/SavedItems";
 import Cart from "./pages/Cart";
-import { CartContext, SavedContext } from "./Contexts";
+import PageNotFound from "./pages/PageNotFound";
 import "./App.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/products/:id" element={<ProductPage />} />
               <Route path="/saved-items" element={<SavedItems />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/*" element={<PageNotFound />} />
             </Routes>
           </SavedContext.Provider>
         </CartContext.Provider>
