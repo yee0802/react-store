@@ -20,28 +20,29 @@
 }
 
 .cart-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-sidebar__length-box {
   display: grid;
-  align-items: center;
-  position: relative;
+  place-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  width: 30px;
+  background-color: #000;
 }
 
 .cart-sidebar-close-btn {
   display: grid;
   place-items: center;
-  position: absolute;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   top: 0;
   left: 0;
   background-color: lightgray;
   border: none;
-  border-radius: 50%;
   cursor: pointer;
-}
-
-.cart-sidebar-close-btn:hover {
-  transform: scale(1.2, 1.2);
-  transition: all 250ms ease-in-out;
 }
 
 .cart-total-items {
