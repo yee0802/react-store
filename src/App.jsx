@@ -8,6 +8,8 @@ import ProductPage from "./pages/ProductPage";
 import CartSidebar from "./components/CartSidebar";
 import SavedItems from "./pages/SavedItems";
 import Cart from "./pages/Cart";
+import PaymentCancelled from "./pages/PaymentCancelled";
+import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PageNotFound from "./pages/PageNotFound";
 import "./App.css";
 
@@ -29,6 +31,11 @@ function App() {
               <Route path="/products/:id" element={<ProductPage />} />
               <Route path="/saved-items" element={<SavedItems />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/payment-cancelled" element={<PaymentCancelled />} />
+              <Route
+                path="/payment-successful"
+                element={<PaymentSuccessful />}
+              />
               <Route path="/*" element={<PageNotFound />} />
             </Routes>
           </SavedContext.Provider>
