@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import CartTotal from "../../../pages/Cart/components/CartTotal";
 import CheckoutBtn from "../../CheckoutBtn";
 
-export default function CartSidebarBasket() {
+export default function CartSidebarBasket({ cart }) {
   return (
     <section className="cart-sidebar__basket">
       <CartTotal />
@@ -20,7 +20,7 @@ export default function CartSidebarBasket() {
           View Cart
         </button>
       </Link>
-      <CheckoutBtn />
+      <CheckoutBtn cart={cart} />
     </section>
   );
 }

@@ -1,13 +1,24 @@
 .saved-items {
   display: grid;
-  grid-template-rows: 40px 1fr;
+  grid-template-rows: auto 1fr;
   justify-content: center;
   height: calc(100vh - 85px);
 }
 
-.saved-items > h1 {
-  text-align: center;
-  margin-top: 8px;
+.saved-items__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+}
+
+.saved-items__header--item-count {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  background-color: #000;
+  color: #fff;
 }
 
 .saved-items--list {
@@ -16,7 +27,7 @@
   gap: 10px;
   overflow-y: scroll;
   padding: 1rem;
-  border-radius: 8px;
+  border-top: 1px solid lightgray;
 }
 
 .saved-items--list::-webkit-scrollbar {
