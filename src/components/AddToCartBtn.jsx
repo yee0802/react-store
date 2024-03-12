@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "../App";
+import { CartContext } from "../context/Contexts";
 
 export default function AddToCartBtn({ product }) {
   const { setCart } = useContext(CartContext);

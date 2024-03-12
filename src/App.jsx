@@ -13,7 +13,7 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PageNotFound from "./pages/PageNotFound";
 import "./App.css";
 
-function App() {
+export default function App() {
   const [cart, setCart] = useState([]);
   const [favourites, setFavourites] = useState([]);
 
@@ -44,5 +44,3 @@ function App() {
     </>
   );
 }
-
-export { App, CartContext };

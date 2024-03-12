@@ -3,7 +3,7 @@ import CartSidebarBasket from "./components/CartSidebarBasket.jsx";
 import CartSidebarHeader from "./components/CartSidebarHeader.jsx";
 import "./index.css";
 import { useContext } from "react";
-import { CartContext } from "../../App.jsx";
+import { CartContext } from "../../context/Contexts.js";
 
 export default function CartSidebar() {
   const { cart, setCart } = useContext(CartContext);
