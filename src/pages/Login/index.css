@@ -1,0 +1,61 @@
+.login-page {
+  display: grid;
+  place-items: center;
+}
+
+.login-container {
+  display: grid;
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 1rem;
+  width: 550px;
+}
+
+.login--header {
+  display: grid;
+  text-align: center;
+}
+
+.login--header > h2 {
+  background-color: #000;
+  color: #fff;
+  padding: 0.4rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.login-response {
+  color: red;
+  padding-top: 0.5rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.login-form > label {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.login-form > label > input {
+  padding: 0 0.2rem;
+  height: 40px;
+}
+
+.login--redirect {
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.submit-login-form {
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  height: 50px;
+  background-color: lightgray;
+}
