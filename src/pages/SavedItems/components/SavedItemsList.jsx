@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { SavedContext } from "../../../Contexts";
+import { SavedContext } from "../../../context/Contexts";
 import SavedItemsListItem from "./SavedItemsListItem";
 
 export default function SavedItemsList() {

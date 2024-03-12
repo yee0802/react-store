@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { CartContext, SavedContext } from "./Contexts";
+import { CartContext, SavedContext } from "./context/Contexts";
 import Header from "./components/Header";
 import Home from "./pages/Home/";
 import Products from "./pages/Products";

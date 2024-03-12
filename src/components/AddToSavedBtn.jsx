@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import HeartLogo from "../assets/heart";
-import { SavedContext } from "../Contexts";
+import { SavedContext } from "../context/Contexts";
 
 export default function AddToSavedBtn({ item }) {
   const { setFavourites } = useContext(SavedContext);

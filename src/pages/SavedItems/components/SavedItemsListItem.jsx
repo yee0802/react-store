@@ -1,7 +1,7 @@
 import AddToCartBtn from "../../../components/AddToCartBtn";
 import x from "../../../assets/x-icon.svg";
 import { useContext } from "react";
-import { SavedContext } from "../../../Contexts";
+import { SavedContext } from "../../../context/Contexts";
 
 export default function SavedItemsListItem({ item }) {
   const { favourites, setFavourites } = useContext(SavedContext);
