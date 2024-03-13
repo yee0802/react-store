@@ -11,6 +11,8 @@ import Cart from "./pages/Cart";
 import PaymentCancelled from "./pages/PaymentCancelled";
 import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PageNotFound from "./pages/PageNotFound";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
 import "./App.css";
 
 export default function App() {
@@ -26,6 +28,7 @@ export default function App() {
             <CartSidebar />
 
             <Routes>
+              <Route path="/*" element={<PageNotFound />} />
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<ProductPage />} />
@@ -36,7 +39,8 @@ export default function App() {
                 path="/payment-successful"
                 element={<PaymentSuccessful />}
               />
-              <Route path="/*" element={<PageNotFound />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Registration />} />
             </Routes>
           </SavedContext.Provider>
         </CartContext.Provider>
