@@ -13,7 +13,7 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
-import { AuthProvider } from "./context/auth.jsx";
+import { AuthProvider, PrivateRoute } from "./context/auth.jsx";
 import "./App.css";
 
 export default function App() {
@@ -36,16 +36,33 @@ export default function App() {
                 <Route path="/products/:id" element={<ProductPage />} />
                 <Route path="/saved-items" element={<SavedItems />} />
                 <Route path="/cart" element={<Cart />} />
+
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Registration />} />
                 <Route
                   path="/payment-cancelled"
-                  element={<PaymentCancelled />}
+                  element={
+                    <PrivateRoute>
+                      <PaymentCancelled />
+                    </PrivateRoute>
+                  }
                 />
                 <Route
                   path="/payment-successful"
-                  element={<PaymentSuccessful />}
+                  element={
+                    <PrivateRoute>
+                      <PaymentSuccessful />
+                    </PrivateRoute>
+                  }
                 />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Registration />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <PrivateRoute>
+                      <p>In progress...</p>
+                    </PrivateRoute>
+                  }
+                />
               </Routes>
             </SavedContext.Provider>
           </CartContext.Provider>
