@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth.js";
 import { jwtDecode } from "jwt-decode";
 
 export const AuthContext = createContext();
@@ -32,7 +33,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     if (storedToken && token && location.state) {
-      console.log("location activated", location);
       navigate(location.state.from.pathname);
     }
   }, [location.state?.from?.pathname, navigate, logout, location, token]);
@@ -51,4 +51,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};
+
+export const PrivateRoute = ({ children }) => {
+  const { token } = useAuth();
+  const location = useLocation();
+
+  if (!token) {
+    return <Navigate to={"/login"} replace state={{ from: location }} />;
+  }
+
+  return children;
 };
