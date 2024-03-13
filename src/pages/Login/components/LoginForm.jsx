@@ -1,7 +1,9 @@
 import { useState } from "react";
 import api from "../../../api";
+import useAuth from "../../../hooks/useAuth";
 
 export default function LoginForm({ setLoginResponse }) {
+  const { setToken } = useAuth();
   const [userLogin, setUserLogin] = useState({ email: "", password: "" });
 
   const handleLoginSubmit = async (e) => {
@@ -16,7 +18,7 @@ export default function LoginForm({ setLoginResponse }) {
       if (res.status === 200) {
         setUserLogin({ email: "", password: "" });
         localStorage.setItem("token", res.data.token);
-
+        setToken(res.data.token);
         return;
       }
 
