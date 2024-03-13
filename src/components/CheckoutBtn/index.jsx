@@ -29,7 +29,11 @@ export default function CheckoutBtn({ cart }) {
     const cartData = cart.map(({ id, quantity }) => ({ id, quantity }));
 
     try {
-      const res = await api.post("/create-checkout-session", cartData);
+      const res = await api.post("/create-checkout-session", cartData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       window.location.href = res.data.url;
     } catch (err) {
