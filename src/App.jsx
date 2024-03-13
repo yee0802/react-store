@@ -13,6 +13,7 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
+import { AuthProvider } from "./context/auth.jsx";
 import "./App.css";
 
 export default function App() {
@@ -22,28 +23,33 @@ export default function App() {
   return (
     <>
       <div className="app-container">
-        <CartContext.Provider value={{ cart, setCart }}>
-          <Header />
-          <SavedContext.Provider value={{ favourites, setFavourites }}>
-            <CartSidebar />
+        <AuthProvider>
+          <CartContext.Provider value={{ cart, setCart }}>
+            <Header />
+            <SavedContext.Provider value={{ favourites, setFavourites }}>
+              <CartSidebar />
 
-            <Routes>
-              <Route path="/*" element={<PageNotFound />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:id" element={<ProductPage />} />
-              <Route path="/saved-items" element={<SavedItems />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/payment-cancelled" element={<PaymentCancelled />} />
-              <Route
-                path="/payment-successful"
-                element={<PaymentSuccessful />}
-              />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Registration />} />
-            </Routes>
-          </SavedContext.Provider>
-        </CartContext.Provider>
+              <Routes>
+                <Route path="/*" element={<PageNotFound />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/products/:id" element={<ProductPage />} />
+                <Route path="/saved-items" element={<SavedItems />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route
+                  path="/payment-cancelled"
+                  element={<PaymentCancelled />}
+                />
+                <Route
+                  path="/payment-successful"
+                  element={<PaymentSuccessful />}
+                />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Registration />} />
+              </Routes>
+            </SavedContext.Provider>
+          </CartContext.Provider>
+        </AuthProvider>
       </div>
     </>
   );
