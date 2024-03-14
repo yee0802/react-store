@@ -1,33 +1,16 @@
 import AddToCartBtn from "../../../components/AddToCartBtn";
 import x from "../../../assets/x-icon.svg";
-import { useContext } from "react";
-import { SavedContext } from "../../../context/Contexts";
+import useAuth from "../../../hooks/useAuth";
 
 export default function SavedItemsListItem({ item }) {
-  const { favourites, setFavourites } = useContext(SavedContext);
-
-  localStorage.setItem("saved-items", JSON.stringify(favourites));
-
-  const removeSavedItem = (item) => {
-    const updatedCart = favourites.filter(
-      (savedItem) => savedItem.id !== item.id
-    );
-
-    if (favourites.length > 1) {
-      setFavourites(updatedCart);
-      localStorage.setItem("saved-items", JSON.stringify(favourites));
-    } else {
-      setFavourites([]);
-      localStorage.removeItem("saved-items");
-    }
-  };
+  const { removeSavedItemById } = useAuth();
 
   return (
     <li className="saved-item__card">
       <button
         className="saved-item__delete-btn"
         title="Remove Item"
-        onClick={() => removeSavedItem(item)}
+        onClick={() => removeSavedItemById(item.id)}
       >
         <img src={x} alt="close-icon" />
       </button>

@@ -1,16 +1,17 @@
-import { useContext } from "react";
 import SavedItemsList from "./components/SavedItemsList";
-import { SavedContext } from "../../context/Contexts";
-import "./index.css";
 import SavedItemsHeader from "./components/SavedItemsHeader";
+import useAuth from "../../hooks/useAuth";
+import "./index.css";
 
 export default function SavedItems() {
-  const { favourites } = useContext(SavedContext);
+  const { loggedInUser } = useAuth();
 
-  return (
-    <main className="saved-items container">
-      <SavedItemsHeader favourites={favourites} />
-      <SavedItemsList />
-    </main>
-  );
+  if (loggedInUser) {
+    return (
+      <main className="saved-items container">
+        <SavedItemsHeader favourites={loggedInUser.savedItems} />
+        <SavedItemsList favourites={loggedInUser.savedItems} />
+      </main>
+    );
+  }
 }
