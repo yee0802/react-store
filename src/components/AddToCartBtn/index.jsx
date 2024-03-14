@@ -1,4 +1,4 @@
-import useCart from "../hooks/useCart";
+import useCart from "../../hooks/useCart";
 
 export default function AddToCartBtn({ product }) {
   const { setCart } = useCart();
