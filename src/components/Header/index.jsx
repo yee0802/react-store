@@ -1,14 +1,13 @@
-import { useContext } from "react";
-import CartContext from "../../context/cart.js";
 import { Link } from "react-router-dom";
 import shoppingBagLogo from "../../assets/shopping-bag.svg";
 import cartLogo from "../../assets/cart.svg";
 import HeartLogo from "../../assets/heart";
 import userIcon from "../../assets/user-icon.svg";
+import useCart from "../../hooks/useCart";
 import "./index.css";
 
 export default function Header() {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
 
   return (
     <header className="app-header">

@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import CartContext from "./context/cart.js";
+import { CartProvider } from "./context/cart.jsx";
 import { AuthProvider, PrivateRoute } from "./context/auth.jsx";
 import Header from "./components/Header";
 import Home from "./pages/Home/";
@@ -17,13 +16,11 @@ import Registration from "./pages/Registration";
 import "./App.css";
 
 export default function App() {
-  const [cart, setCart] = useState([]);
-
   return (
     <>
       <div className="app-container">
         <AuthProvider>
-          <CartContext.Provider value={{ cart, setCart }}>
+          <CartProvider>
             <Header />
             <CartSidebar />
 
@@ -69,7 +66,7 @@ export default function App() {
                 }
               />
             </Routes>
-          </CartContext.Provider>
+          </CartProvider>
         </AuthProvider>
       </div>
     </>

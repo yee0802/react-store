@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import CartContext from "../../context/cart.js";
+import useCart from "../../hooks/useCart.js";
 import CartSidebarList from "./components/CartList.jsx";
 import CartTotal from "./components/CartTotal.jsx";
 import CheckoutBtn from "../../components/CheckoutBtn";
@@ -7,7 +6,7 @@ import CartPageHeader from "./components/CartPageHeader.jsx";
 import "./index.css";
 
 export default function Cart() {
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, setCart } = useCart();
 
   return (
     <main className="cart-page container">

@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import CartContext from "../context/cart.js";
+import useCart from "../hooks/useCart";
 
 export default function AddToCartBtn({ product }) {
-  const { setCart } = useContext(CartContext);
+  const { setCart } = useCart();
 
   const addToCart = (item) => {
     setCart((currentCart) => {
