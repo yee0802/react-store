@@ -34,7 +34,6 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:id" element={<ProductPage />} />
-                <Route path="/saved-items" element={<SavedItems />} />
                 <Route path="/cart" element={<Cart />} />
 
                 <Route path="/login" element={<Login />} />
@@ -60,6 +59,14 @@ export default function App() {
                   element={
                     <PrivateRoute>
                       <p>In progress...</p>
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/saved-items"
+                  element={
+                    <PrivateRoute>
+                      <SavedItems />
                     </PrivateRoute>
                   }
                 />
