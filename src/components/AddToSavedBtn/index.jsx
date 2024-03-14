@@ -1,5 +1,5 @@
-import HeartLogo from "../assets/heart";
-import useAuth from "../hooks/useAuth";
+import HeartLogo from "../../assets/heart";
+import useAuth from "../../hooks/useAuth";
 
 export default function AddToSavedBtn({ item }) {
   const { addSavedItemById } = useAuth();
