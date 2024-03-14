@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth.js";
 import { jwtDecode } from "jwt-decode";
+import api from "../api/index.js";
 
 export const AuthContext = createContext();
 
@@ -12,6 +13,7 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [logout, setLogout] = useState(false);
   const [userId, setUserId] = useState("");
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -30,6 +32,10 @@ export const AuthProvider = ({ children }) => {
 
     if (storedToken && !userId) {
       setUserId(jwtDecode(storedToken).userId);
+    }
+
+    if (storedToken && userId && !loggedInUser) {
+      fetchCurrentUserById(userId).then(setLoggedInUser);
     }
 
     if (storedToken && token && location.state) {
@@ -73,6 +79,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     token,
     userId,
+    loggedInUser,
     onLogout: handleLogout,
     setToken,
   };
