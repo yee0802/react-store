@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import CartContext from "./context/Contexts";
+import CartContext from "./context/cart.js";
 import { AuthProvider, PrivateRoute } from "./context/auth.jsx";
 import Header from "./components/Header";
 import Home from "./pages/Home/";
