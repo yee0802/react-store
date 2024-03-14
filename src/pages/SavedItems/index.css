@@ -24,10 +24,15 @@
 .saved-items--list {
   display: grid;
   grid-auto-rows: 332px;
+  width: 876px;
   gap: 10px;
   overflow-y: scroll;
   padding: 1rem;
   border-top: 1px solid lightgray;
+}
+
+.saved-items--list > p {
+  text-align: center;
 }
 
 .saved-items--list::-webkit-scrollbar {
