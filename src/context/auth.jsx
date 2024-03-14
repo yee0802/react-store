@@ -35,7 +35,34 @@ export const AuthProvider = ({ children }) => {
     if (storedToken && token && location.state) {
       navigate(location.state.from.pathname);
     }
-  }, [location.state?.from?.pathname, navigate, logout, location, token]);
+  }, [
+    location.state?.from?.pathname,
+    navigate,
+    logout,
+    location,
+    token,
+    userId,
+  ]);
+
+  const fetchCurrentUserById = async (id) => {
+    try {
+      const res = await api.get(`/user/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      return res.data.user;
+    } catch (err) {
+      if (err.response) {
+        console.log(err.response.data);
+        console.log(err.response.status);
+        console.log(err.response.headers);
+      } else {
+        console.log(`Error: ${err.message}`);
+      }
+    }
+  };
 
   const handleLogout = () => {
     setLogout(true);
