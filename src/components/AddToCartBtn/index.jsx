@@ -1,4 +1,5 @@
 import useCart from "../../hooks/useCart";
+import "./index.css";
 
 export default function AddToCartBtn({ product }) {
   const { setCart } = useCart();

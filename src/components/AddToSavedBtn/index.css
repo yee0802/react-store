@@ -1,0 +1,23 @@
+.fav {
+  display: grid;
+  place-items: center;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  font-weight: bold;
+  padding: 0.4rem;
+  cursor: pointer;
+  border: none;
+  background-color: lightgray;
+}
+
+.fav > svg {
+  height: 17px;
+  width: 17px;
+}
+
+.fav > svg:hover {
+  fill: red;
+  transform: scale(1.4, 1.4);
+  transition: all 150ms ease-in;
+}
