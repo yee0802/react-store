@@ -1,0 +1,16 @@
+.atc {
+  cursor: pointer;
+  border: none;
+  background-color: lightgray;
+}
+
+.atc {
+  height: 90%;
+  border-radius: 7px;
+  font-size: 1.1rem;
+}
+
+.atc:hover {
+  background-color: rgb(167, 166, 166);
+  transition: background-color 200ms ease-in-out;
+}

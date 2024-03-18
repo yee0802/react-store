@@ -48,7 +48,8 @@
 }
 
 .fav-link-container,
-.products-link-container {
+.products-link-container,
+.profile-link-container {
   display: grid;
   place-content: center;
 }
@@ -64,7 +65,8 @@
   transition: fill 200ms ease-in-out;
 }
 
-.products-link > img {
+.products-link > img,
+.profile-link > img {
   width: 28px;
   height: 28px;
   margin-bottom: 2px;

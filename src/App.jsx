@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { CartContext, SavedContext } from "./Contexts";
+import { CartProvider } from "./context/cart.jsx";
+import { AuthProvider, PrivateRoute } from "./context/auth.jsx";
 import Header from "./components/Header";
 import Home from "./pages/Home/";
 import Products from "./pages/Products";
@@ -11,38 +11,65 @@ import Cart from "./pages/Cart";
 import PaymentCancelled from "./pages/PaymentCancelled";
 import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PageNotFound from "./pages/PageNotFound";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
+import Account from "./pages/Account";
 import "./App.css";
 
-function App() {
-  const [cart, setCart] = useState([]);
-  const [favourites, setFavourites] = useState([]);
-
+export default function App() {
   return (
     <>
       <div className="app-container">
-        <CartContext.Provider value={{ cart, setCart }}>
-          <Header />
-          <SavedContext.Provider value={{ favourites, setFavourites }}>
+        <AuthProvider>
+          <CartProvider>
+            <Header />
             <CartSidebar />
 
             <Routes>
+              <Route path="/*" element={<PageNotFound />} />
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<ProductPage />} />
-              <Route path="/saved-items" element={<SavedItems />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/payment-cancelled" element={<PaymentCancelled />} />
+
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Registration />} />
+              <Route
+                path="/payment-cancelled"
+                element={
+                  <PrivateRoute>
+                    <PaymentCancelled />
+                  </PrivateRoute>
+                }
+              />
               <Route
                 path="/payment-successful"
-                element={<PaymentSuccessful />}
+                element={
+                  <PrivateRoute>
+                    <PaymentSuccessful />
+                  </PrivateRoute>
+                }
               />
-              <Route path="/*" element={<PageNotFound />} />
+              <Route
+                path="/account"
+                element={
+                  <PrivateRoute>
+                    <Account />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/saved-items"
+                element={
+                  <PrivateRoute>
+                    <SavedItems />
+                  </PrivateRoute>
+                }
+              />
             </Routes>
-          </SavedContext.Provider>
-        </CartContext.Provider>
+          </CartProvider>
+        </AuthProvider>
       </div>
     </>
   );
 }
-
-export { App, CartContext };
