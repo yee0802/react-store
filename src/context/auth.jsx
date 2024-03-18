@@ -153,6 +153,7 @@ export const AuthProvider = ({ children }) => {
     userId,
     loggedInUser,
     setToken,
+    setRefresh,
     removeSavedItemById,
     addSavedItemById,
     onLogout: handleLogout,
