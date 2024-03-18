@@ -13,6 +13,7 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
+import Account from "./pages/Account";
 import "./App.css";
 
 export default function App() {
@@ -50,10 +51,10 @@ export default function App() {
                 }
               />
               <Route
-                path="/profile"
+                path="/account"
                 element={
                   <PrivateRoute>
-                    <p>In progress...</p>
+                    <Account />
                   </PrivateRoute>
                 }
               />
