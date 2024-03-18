@@ -17,7 +17,7 @@ export default function Header() {
 
       <section className="header__links">
         <section className="profile-link-container">
-          <Link className="profile-link" to="/profile">
+          <Link className="profile-link" to="/account">
             <img src={userIcon} alt="user-icon" />
           </Link>
         </section>
