@@ -17,7 +17,6 @@ export const AuthProvider = ({ children }) => {
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    console.log("Activated");
     const storedToken = localStorage.getItem("token");
 
     if (logout) {
@@ -41,7 +40,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     if (loggedInUser && refresh && userId) {
-      console.log("refreshing...");
       fetchCurrentUserById(userId).then(setLoggedInUser);
       setRefresh(false);
     }
@@ -62,7 +60,6 @@ export const AuthProvider = ({ children }) => {
 
   const removeSavedItemById = async (id) => {
     try {
-      console.log("removing saved item...");
       const opts = {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -92,7 +89,6 @@ export const AuthProvider = ({ children }) => {
 
   const addSavedItemById = async (id) => {
     try {
-      console.log("adding saved item...");
       const opts = {
         headers: {
           Authorization: `Bearer ${token}`,
