@@ -17,7 +17,7 @@ To run a local copy on your machine, please follow the steps below:
 
 ### Pre-requisites
 
-Install Node.js or update npm to lastest version
+Install [Node.js](https://nodejs.org/en/download/current) or update npm to lastest version
 
 ```lua
  npm install npm@latest -g
