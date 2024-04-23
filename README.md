@@ -11,6 +11,8 @@ To view the backend repository, click [here](https://github.com/yee0802/react-st
 
 ![Homepage](/images/homepage.png)
 
+To view additional screenshots, please navigate to the [images](/images/) directory.
+
 ## Setup
 
 To run a local copy on your machine, please follow the steps below:
